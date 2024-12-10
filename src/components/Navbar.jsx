@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router";
 const Navbar = () => {
   const products = useSelector((state) => state.cart.products);
-  console.log(products);
   return (
     <nav className="w-full bg-white shadow-md">
       <div className="container mx-auto px-4 md:px-16 lg:px-24 py-4 flex justify-between items-center">
@@ -15,7 +14,7 @@ const Navbar = () => {
             <input
               type="text"
               placeholder="search product"
-              className="w-full border py-2 px-4"
+              className="w-full border py-2 px-4 outline-none rounded-full"
             />
             <FaSearch className="top-3 absolute right-3 text-red-500" />
           </form>
@@ -29,7 +28,13 @@ const Navbar = () => {
               </span>
             )}
           </Link>
-          <button className="hidden md:block"> Login | Register</button>
+          <div className="flex items-center gap-2">
+            <button className="hidden md:block hover:underline">Login</button>
+            <span> | </span>
+            <button className="hidden md:block hover:underline">
+              Register
+            </button>
+          </div>
           <button className="block md:hidden ">
             <FaUser />
           </button>

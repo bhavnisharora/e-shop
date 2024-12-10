@@ -14,30 +14,32 @@ const category = [
   {
     title: "Kids",
     imageUrl:
-      "https://i0.wp.com/textilelearner.net/wp-content/uploads/2023/07/jeans-for-kids.jpg?resize=392%2C522&ssl=1",
+      "https://objectstorage.ap-mumbai-1.oraclecloud.com/n/softlogicbicloud/b/cdn/o/category-images/60b88eb7c6211.png",
   },
 ];
 
 const CategorySection = () => {
   return (
-    <div className="container mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 ">
-      {category.map((elem, index) => (
-        <div
-          key={index}
-          className="relative h-64 transform transition-transform duration-300 hover:scale-105 cursor-pointer"
-        >
-          <img
-            src={elem.imageUrl}
-            alt=""
-            className="h-full object-cover rounded-lg shadow-md"
-          />
+    <div className=" container mx-auto flex justify-center items-center">
+      <div className=" grid grid-cols-1 sm:grid-cols-3 gap-6 md:space-x-14 ">
+        {category.map((elem, index) => (
+          <div
+            key={index}
+            className="relative h-64 transform transition-transform duration-300 hover:scale-105 cursor-pointer"
+          >
+            <img
+              src={elem.imageUrl}
+              alt=""
+              className="h-full object-cover rounded-lg shadow-md"
+            />
 
-          <div className="absolute top-20 left-2">
-            <p className="text-md font-bold">{elem.title}</p>
-            <p className="text-gray-600">View All</p>
+            <div className="absolute top-20 left-2">
+              <p className="text-md font-bold">{elem.title}</p>
+              <p className="text-gray-600">View All</p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

@@ -39,7 +39,7 @@ const InfoSection = () => {
             transform transition-transform duration-300 hover:scale-105 cursor-pointer"
           >
             {item.icon}
-            <h3 className="mt-4 text-lg font-mono font-semibold">
+            <h3 className="mt-4 text-lg font-serif font-semibold">
               {item.title}
             </h3>
             <p className="mt-2 text-gray-600">{item.description}</p>

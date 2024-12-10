@@ -68,7 +68,7 @@ const Footer = () => {
               placeholder="enter email"
               className="w-full p-2 rounded-lg bg-gray-800 border border-gray-600 outline-none"
             />
-            <button className="bg-red-600 px-4 py-2 text-white rounded-md ml-2">
+            <button className="bg-red-500 px-4 py-2 text-white rounded-md ml-2 hover:bg-red-700">
               Subscibe
             </button>
           </form>
