@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const category = [
   {
@@ -17,8 +17,29 @@ const category = [
       "https://objectstorage.ap-mumbai-1.oraclecloud.com/n/softlogicbicloud/b/cdn/o/category-images/60b88eb7c6211.png",
   },
 ];
-
 const CategorySection = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="container mx-auto flex justify-center items-center ">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:space-x-14 animate-pulse ">
+          <div className="h-60 w-64 rounded-xl shadow bg-gray-300"></div>
+          <div className="h-60 w-64  rounded-xl shadow bg-gray-300"></div>
+          <div className="h-60 w-64 rounded-xl shadow bg-gray-300"></div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className=" container mx-auto flex justify-center items-center">
       <div className=" grid grid-cols-1 sm:grid-cols-3 gap-6 md:space-x-14 ">

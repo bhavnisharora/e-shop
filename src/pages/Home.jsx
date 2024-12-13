@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Hero from "../assets/images/hero-banner.jpg";
 import InfoSection from "../components/InfoSection";
 import CategorySection from "../components/CategorySection";
@@ -8,7 +8,10 @@ import { categories, mockData } from "../assets/mockData";
 import ProductCard from "../components/ProductCard";
 import { Link } from "react-router";
 import Shop from "./Shop";
+import { Helmet } from "react-helmet-async";
 const Home = () => {
+  const [loading, setLoading] = useState(true);
+
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
 
@@ -16,8 +19,21 @@ const Home = () => {
     dispatch(setProducts(mockData));
   }, []);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
+      <Helmet>
+        <title>Home - E-Shop</title>
+        <meta name="description" content="" />
+      </Helmet>
+
       <div className="bg-white mt-2 px-4 md:px-16 lg:px-24">
         <div className="container mx-auto py-4 flex flex-col md:flex-row md:space-x-4">
           {/* Categories Section */}
@@ -48,7 +64,6 @@ const Home = () => {
               />
             </div>
             <div className="absolute inset-0 flex flex-col justify-center items-center text-center bg-black bg-opacity-50 text-white">
-              <p className="text-md">Bhavnish Arora | e-shop</p>
               <h2 className="text-2xl md:text-4xl font-bold">
                 WELCOME TO E-SHOP
               </h2>
@@ -67,7 +82,14 @@ const Home = () => {
         <InfoSection />
         <CategorySection />
         <div className="container mx-auto py-12">
-          <h2 className="text-2xl font-bold mb-6 text-center">Top Products</h2>
+          {loading ? (
+            <div className="h-8 w-32 mx-auto bg-gray-300 rounded-xl mb-6 animate-pulse"></div>
+          ) : (
+            <h2 className="text-2xl font-bold mb-6 text-center">
+              Top Products
+            </h2>
+          )}
+
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 cursor-pointer">
             {products?.products?.slice(0, 5).map((product) => (
               <ProductCard product={product} />
