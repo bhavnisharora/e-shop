@@ -14,11 +14,11 @@ const InfoSection = () => {
     };
   });
   const infoItems = [
-    {
-      icon: <FaShoppingCart className="text-3xl text-red-600" />,
-      title: "Free Shipping",
-      description: "Get your orders delivered with no extra cost",
-    },
+    // {
+    //   icon: <FaShoppingCart className="text-3xl text-red-600" />,
+    //   title: "Free Shipping",
+    //   description: "Get your orders delivered with no extra cost",
+    // },
     {
       icon: <FaHeadset className="text-3xl text-red-600" />,
       title: "Support 24/7",
