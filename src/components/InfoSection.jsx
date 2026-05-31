@@ -19,11 +19,11 @@ const InfoSection = () => {
     //   title: "Free Shipping",
     //   description: "Get your orders delivered with no extra cost",
     // },
-    {
-      icon: <FaHeadset className="text-3xl text-red-600" />,
-      title: "Support 24/7",
-      description: "We are here to assist you anytime",
-    },
+    // {
+    //   icon: <FaHeadset className="text-3xl text-red-600" />,
+    //   title: "Support 24/7",
+    //   description: "We are here to assist you anytime",
+    // },
     {
       icon: <FaMoneyBill1Wave className="text-3xl text-red-600" />,
       title: "100% Money Back",
