@@ -35,11 +35,11 @@ const InfoSection = () => {
       description: "your payment information is safe with us",
     },
 
-    {
-      icon: <FaTag className="text-3xl text-red-600" />,
-      title: "Discount",
-      description: "Enjoy the best prices on your products",
-    },
+    // {
+    //   icon: <FaTag className="text-3xl text-red-600" />,
+    //   title: "Discount",
+    //   description: "Enjoy the best prices on your products",
+    // },
   ];
 
   if (loading) {
